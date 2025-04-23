@@ -1,0 +1,40 @@
+<div>
+  <button (click)="addMobile()">Add Mobile</button>
+
+  <!-- Form for editing or adding a mobile -->
+  <div *ngIf="showForm">
+    <app-edit [mobileToEdit]="mobileToEdit" (saveMobile)="saveMobile($event)"></app-edit>
+    <button (click)="cancelForm()">Cancel</button>
+  </div>
+
+  <!-- Table displaying the list of mobiles -->
+  <div *ngIf="mobiles.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Brand</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mobile of mobiles">
+          <td>{{ mobile.name }}</td>
+          <td>{{ mobile.brand }}</td>
+          <td>{{ mobile.price }}</td>
+          <td>{{ mobile.rating }}</td>
+          <td>
+            <button (click)="editMobile(mobile)">Edit</button>
+            <button (click)="deleteMobile(mobile.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="mobiles.length === 0">
+    <p>No mobiles available.</p>
+  </div>
+</div>

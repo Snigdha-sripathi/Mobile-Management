@@ -1,0 +1,105 @@
+/* Overall form styling */
+form {
+  width: 80%;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color:hsl(0, 0.00%, 89.00%);
+}
+
+/* Each form field group */
+form div {
+  margin-bottom: 15px;
+}
+
+/* Labels */
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Inputs */
+form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons container aligned to right */
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Button base style */
+button {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Save button */
+button[type="submit"] {
+  background-color:hsl(134, 70.00%, 23.50%);
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color:hsl(134, 70.00%, 23.50%);
+}
+
+/* Cancel button */
+button[type="button"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+button[type="button"]:hover {
+  background-color: #c82333;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  form {
+    width: 95%;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+/* Style for error messages */
+small {
+  color: red;
+  font-size: 0.8rem;
+}
+
+/* Optional: Style for form fields that have errors */
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
